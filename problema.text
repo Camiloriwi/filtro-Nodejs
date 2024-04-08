@@ -1,0 +1,94 @@
+
+Prueba de desempeño 
+NodeJs
+
+Team Leader:  Alberto Galvis		           fecha: Lunes 8 de abril del 2024
+Grupo:  Van Rossum
+
+Reglas de la prueba
+    • Comunicación: Está prohibido hablar o comunicarse de cualquier forma con otros estudiantes durante el examen.
+
+    • Integridad Académica: Cualquier forma de trampa, incluido el plagio, copiado o uso de material no autorizado (auto generadores de código o inteligencia artificial), resultará en una calificación de cero en el examen y puede llevar a sanciones adicionales según las políticas de RIWI.
+
+    • Material Permitido: Solo se permite ver material de apoyo como lo son diapositivas o ejercicios realizados en clase, y notas tomadas en el cuaderno. 
+
+    • Permanencia en el Aula: Una vez iniciado el examen, no se permite salir del aula hasta haber entregado el examen y, de preferencia, hasta que haya transcurrido al menos la mitad del tiempo asignado.
+
+    • Entrega: Una vez finalizada la prueba se debe subir en una carpeta comprimida: PruebaDeDesempeñoNodeJs_NombreCompleto del coder a Moodle.
+
+Planteamiento del problema
+En el mundo moderno, las bibliotecas juegan un papel crucial en la difusión del conocimiento y la promoción de la educación. Sin embargo, con el avance de la tecnología, las bibliotecas también han evolucionado para adaptarse a las demandas cambiantes de los usuarios. En este contexto, la implementación de un sistema RESTful para una biblioteca se vuelve fundamental para facilitar el acceso y la gestión eficiente de recursos como libros y clientes.
+
+Objetivo principal 
+Desarrollar servicios RESTful que permitan la gestión de dos entidades principales: libros y clientes. Para ello, el sistema debe ofrecer una serie de endpoints que permitan la realización de operaciones CRUD (Crear, Leer, Actualizar, Eliminar) sobre estos recursos, garantizando la integridad de los datos y la seguridad de la información.
+
+Requerimientos.
+Clientes
+    1. El sistema me debe permitir <Listar todos los clientes registrados>
+
+    2. El sistema me debe permitir <Ver detalles de un cliente por ID)>
+
+    3. El sistema me debe permitir <Crear un nuevo cliente>
+
+    4. El sistema me debe permitir <Actualizar un cliente por ID>
+
+    5. El sistema me debe permitir <Eliminar un cliente por ID>
+
+    6. El sistema me debe permitir <Ver detalles de un cliente por email>
+
+    7. El sistema me debe permitir <Listar clientes por genero ya sea Masculino o femenino> se envía el género por parámetro.
+    8. El sistema me debe permitir <Listar clientes por edad> se envía la edad por parámetro
+
+
+
+
+Libros
+    1. El sistema me debe permitir <Listar todos los libros registrados>
+
+    2. El sistema me debe permitir <Ver detalles de un libro por ID)>
+
+    3. El sistema me debe permitir <Crear un nuevo libro>
+
+    4. El sistema me debe permitir <Actualizar un libro por ID>
+
+    5. El sistema me debe permitir <Eliminar un libro por ID>
+
+    6. El sistema me debe permitir <listar libros por author> se envía por parámetro el autor
+    7. El sistema me debe permitir <Filtrar por nombre del libro> se envía por parámetro el nombre del libro.
+    
+    8. El sistema me debe permitir <Filtrar por cantidad de páginas> se envía por parámetro la cantidad de las páginas.
+
+Instrucciones.
+
+ 
+
+Instrucciones Node.js
+    1. Configuración del proyecto
+    2. Instalar las dependencias necesarias
+    3. Estructurar los directorios en modelos, controladores, rutas y config de base de
+Datos
+    4. Definir el modelo Client, Book
+    5.  Crear las rutas
+    6. Crear los métodos en el controlador
+    7. Probar la API
+
+Instrucciones Nests
+    1. Configuración del proyecto
+    • Instalar la cli de nestjs @nestjs/cli
+    • Instalar la librería de mongoose y @nest/mongoose
+    • nest new students-api
+    2. Generación módulo, controlador y servicio
+    • nest generate module students
+    • nest generate controller students
+    • nest generate service students
+    3. Definir la entidad Student
+    4. Implementar el servicio
+    5. Implementar el controlador
+    6. Probar la API.
+
+Entregable técnico.
+    1. Código fuente de la solución de la problemática.
+    2. Listado de endpoints registrados en un documento de texto.
+Ejemplo:
+
+
