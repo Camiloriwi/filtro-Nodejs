@@ -206,11 +206,12 @@ const clientControl = {
                 message: error.message
             });
         }
-    },
+    }
+    
 
 
 
-};
+}
 
 
 
@@ -375,11 +376,11 @@ const bookControl = {
                 message: error.message
             });
         }
-    },
+    }
 
 }
 
 module.exports = {
     clientControl,
-    bookControl,
+    bookControl
 }

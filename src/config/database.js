@@ -9,10 +9,10 @@ const connectDB = async ()=>{
         
         if (!books) {
             books = mongoose.model('books'),require('../models/model'.schema);
-        }  
+        }  ;
         if (!clients) {
             clients= mongoose.model('clients', require('../models/model').schema);
-        }
+        };
         await  mongoose.connect('mongodb+srv://camilo:C23JlXoLIvokyukw@filtro.xq3dxlh.mongodb.net/').
         then(()=>{console.log('conneted database')})
         .catch((err)=>{console.log(err)});
@@ -21,7 +21,7 @@ const connectDB = async ()=>{
         process.exit(1);
     }
 
-}
+};
 
 
 module.exports = connectDB;
