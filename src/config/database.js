@@ -1,17 +1,17 @@
 
 const mongoose = require("mongoose");
 
-let books;
-let clients;
+let book;
+let client;
 
 const connectDB = async ()=>{
     try {
         
-        if (!books) {
-            books = mongoose.model('books'),require('../models/model'.schema);
+        if (!book) {
+            book = mongoose.model('books'),require('../models/model'.schema);
         }  ;
-        if (!clients) {
-            clients= mongoose.model('clients', require('../models/model').schema);
+        if (!client) {
+            client= mongoose.model('clients', require('../models/model').schema);
         };
         await  mongoose.connect('mongodb+srv://camilo:C23JlXoLIvokyukw@filtro.xq3dxlh.mongodb.net/').
         then(()=>{console.log('conneted database')})
