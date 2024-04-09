@@ -107,7 +107,7 @@ module.exports.clientControl= {
 
     getByName: async (req, res) => {
         try {
-            const clients = await Client.find(req.params.email);
+            const clients = await Client.find({email:req.params.email});
             res.json({
                 query:'OK',
                 success: true,
@@ -126,7 +126,7 @@ module.exports.clientControl= {
     },
     getByage: async (req, res) => {
         try {
-            const edad = await Client.find(req.params.age);
+            const edad = await Client.find({age:req.params.age});
             res.json({
                 query:'OK',
                 success: true,
@@ -146,15 +146,13 @@ module.exports.clientControl= {
 
     getByGender: async (req, res) => {
         try {
-            const hombre = await Client.find(req.params,{gender: "masculino"});
-            const mujer = await Client.find(req.params,{gender: "femenino"});
+            const data = await Client.find({gender:req.params.gender});
             res.json({
                 query:'OK',
                 success: true,
                 status: 200,
                 message: "client found successfully",
-                data: hombre,
-                data:mujer
+                data: data
             });
         } catch (error) {
             res.status(500).json({
@@ -320,7 +318,7 @@ module.exports.bookControl = {
     },
     getByAthor: async (req, res) => {
         try {
-            const books = await Book.find(req.params.author);
+            const books = await Book.find({name:req.params.author});
             res.json({
                 query:'OK',
                 success: true,
@@ -339,7 +337,7 @@ module.exports.bookControl = {
     },
     getByNames: async (req, res) => {
         try {
-            const books = await Book.find(req.params.name);
+            const books = await Book.find({name:req.params.name});
             res.json({
                 query:'OK',
                 success: true,
@@ -358,7 +356,7 @@ module.exports.bookControl = {
     },
     getByPages: async (req, res) => {
         try {
-            const books = await Book.find(req.params.pages);
+            const books = await Book.find({pages:req.params.pages});
             res.json({
                 query:'OK',
                 success: true,
