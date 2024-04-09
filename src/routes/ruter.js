@@ -1,7 +1,7 @@
 const express = require('express');
 const ruter = express.Router();
-const clientControl = require('../controllers/control');
-const bookControl = require("../controllers/control");
+const { clientControl, bookControl } = require('../controllers/control');
+
 
 
 
@@ -22,16 +22,16 @@ ruter.delete("/delete/:_id",clientControl.deleteClient);
 
 ruter.post("/newBook",bookControl.createBook);
 ruter.get('/allBook',bookControl.getAllBook);
-ruter.get('/id/:_id',bookControl.getByIdBook);
+ruter.get('/idBook/:_id',bookControl.getByIdBook);
 ruter.put('/update/:_id',bookControl.updateBook);
 ruter.delete("/delete/:_id",bookControl.deleteBook);
 ruter.get('/author/:name',bookControl.getByAthor);
 ruter.get("/pages/:pages",bookControl.getByPages);
-ruter.get('/name/:name',bookControl.getByName);
+ruter.get('/nameBook/:name',bookControl.getByNames);
 
 
 
-
+module.exports = ruter;
 
 
 

@@ -1,27 +1,26 @@
 
 const mongoose = require('mongoose');
 
-const bookSchema= new mongoose.Schema({
+const BookSchema = new mongoose.Schema({
     name: String,
     author: String,
     pages: Number,
     describe: String,
 });
 
-const clientSchema= new mongoose.Schema({
+const ClientSchema = new mongoose.Schema({
     name: String,
     lastName: String,
     age: Number,
-    gender:String,
-    email:String,
-    password:String,
+    gender: String,
+    email: String,
+    password: String,
 });
 
-
-const client = mongoose.model("clients", clientSchema);
-const book = mongoose.model("books",bookSchema);
+const Book = mongoose.model("Books", BookSchema);
+const Client = mongoose.model("Clients", ClientSchema);
 
 module.exports = {
-    client,
-    book
-}
+    Book,
+    Client
+};

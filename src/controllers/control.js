@@ -1,6 +1,5 @@
 
-const cliente = require('../models/model');
-const books = require('../models/model');
+const { Book, Client } = require('../models/model'); 
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const jwt_secret = "##%dasdsadasd##";
@@ -9,19 +8,19 @@ const jwt_secret = "##%dasdsadasd##";
 
 
 
-const clientControl = {
+module.exports.clientControl= {
 
     createClient: async (req, res) => {
         try {
-            const client = new cliente(req.body);
-            client.password = await bcrypt.hash(client.password, 10);
-            await client.save();
+            const clients = new Client(req.body);
+            clients.password = await bcrypt.hash(clients.password, 10);
+            await clients.save();
             res.status(201).json({
                 query:'OK',
                 success: true,
                 status: 200,
                 message: "Student created successfully",
-                data: client
+                data: clients
             });
         } catch (error) {
             res.status(500).json({
@@ -38,7 +37,7 @@ const clientControl = {
             
             const { email, password } = req.body;
 
-            const user = await cliente.find({email: email});
+            const user = await Client.find({email: email});
 
             if (!user) {
             return res.status(400).json({message: "Invalid username or password"});
@@ -64,13 +63,13 @@ const clientControl = {
     },
     getAllClient:async (req, res) => {
         try {
-            const client =  await cliente.find();
+            const clients =  await Client.find();
             res.json({
                 query:'OK',
                 success: true,
                 status: 200,
                 message: "client get successfully",
-                data: client
+                data: clients
             });
             
         } catch (error) {
@@ -88,13 +87,13 @@ const clientControl = {
 
     getById: async (req, res) => {
         try {
-            const client = await cliente.findById(req.params._id);
+            const clients = await Client.findById(req.params._id);
             res.json({
                 query:'OK',
                 success: true,
                 status: 200,
                 message: "client found successfully",
-                data: client
+                data: clients
             });
         } catch (error) {
             res.status(500).json({
@@ -108,13 +107,13 @@ const clientControl = {
 
     getByName: async (req, res) => {
         try {
-            const client = await cliente.find(req.params.email);
+            const clients = await Client.find(req.params.email);
             res.json({
                 query:'OK',
                 success: true,
                 status: 200,
                 message: "client found successfully",
-                data: client
+                data: clients
             });
         } catch (error) {
             res.status(500).json({
@@ -127,14 +126,13 @@ const clientControl = {
     },
     getByage: async (req, res) => {
         try {
-            const hombre = await cliente.find(req.params.age);
+            const edad = await Client.find(req.params.age);
             res.json({
                 query:'OK',
                 success: true,
                 status: 200,
                 message: "client found successfully",
-                data: hombre,
-                data:mujer
+                data: edad
             });
         } catch (error) {
             res.status(500).json({
@@ -148,8 +146,8 @@ const clientControl = {
 
     getByGender: async (req, res) => {
         try {
-            const hombre = await cliente.find(req.params,{gender: "masculino"});
-            const mujer = await cliente.find(req.params,{gender: "femenino"});
+            const hombre = await Client.find(req.params,{gender: "masculino"});
+            const mujer = await Client.find(req.params,{gender: "femenino"});
             res.json({
                 query:'OK',
                 success: true,
@@ -170,13 +168,13 @@ const clientControl = {
 
     updateClient: async (req, res) => {
         try {
-            const client = await cliente.findByIdAndUpdate(req.params._id, req.body, { new: true });
+            const clients = await Client.findByIdAndUpdate(req.params._id, req.body, { new: true });
             res.json({
                 query:'OK',
                 success: true,
                 status: 200,
                 message: "client updated successfully",
-                data: client
+                data: clients
             });
         } catch (error) {
             res.status(500).json({
@@ -190,13 +188,13 @@ const clientControl = {
     },
     deleteClient: async (req, res) => {
         try {
-            const client = await cliente.findByIdAndDelete(req.params._id);
+            const clients = await Client.findByIdAndDelete(req.params._id);
             res.json({
                 query:'OK',
                 success: true,
                 status: 200,
                 message: "client deleted successfully",
-                data: client
+                data: clients
             });
         } catch (error) {         
             res.status(500).json({
@@ -215,18 +213,18 @@ const clientControl = {
 
 
 
-const bookControl = {
+module.exports.bookControl = {
     
     createBook: async (req, res) => {
         try {
-            const book = new books(req.body);
-            await book.save();
+            const books = new Book(req.body);
+            await books.save();
             res.status(201).json({
                 query:'OK',
                 success: true,
                 status: 200,
                 message: "Student created successfully",
-                data: book
+                data: books
             });
        } catch (error) {
            res.status(500).json({
@@ -241,13 +239,13 @@ const bookControl = {
     getAllBook:async (req, res)=> {
          try {
             
-             const book = await books.find();
+             const books = await Book.find();
              res.json({
                  query:'OK',
                  success: true,
                  status: 200,
                  message: "Student created successfully",
-                 data: book
+                 data: books
              });
 
 
@@ -264,13 +262,13 @@ const bookControl = {
     
     getByIdBook: async (req, res) => {
         try {
-            const book = await books.findById(req.params._id);
+            const books = await Book.findById(req.params._id);
             res.json({
                 query:'OK',
                 success: true,
                 status: 200,
                 message: "client found successfully",
-                data: book
+                data: books
             });
         } catch (error) {
             res.status(500).json({
@@ -303,13 +301,13 @@ const bookControl = {
     },
     deleteBook: async (req, res) => {
         try {
-            const book = await books.findByIdAndDelete(req.params._id);
+            const books = await Book.findByIdAndDelete(req.params._id);
             res.json({
                 query:'OK',
                 success: true,
                 status: 200,
                 message: "client deleted successfully",
-                data: book
+                data: books
             });
         } catch (error) {         
             res.status(500).json({
@@ -322,13 +320,13 @@ const bookControl = {
     },
     getByAthor: async (req, res) => {
         try {
-            const book = await books.find(req.params.author);
+            const books = await Book.find(req.params.author);
             res.json({
                 query:'OK',
                 success: true,
                 status: 200,
                 message: "client found successfully",
-                data: book
+                data: books
             });
         } catch (error) {
             res.status(500).json({
@@ -339,15 +337,15 @@ const bookControl = {
             });
         }
     },
-    getByName: async (req, res) => {
+    getByNames: async (req, res) => {
         try {
-            const book = await books.find(req.params.name);
+            const books = await Book.find(req.params.name);
             res.json({
                 query:'OK',
                 success: true,
                 status: 200,
                 message: "client found successfully",
-                data: client
+                data: books
             });
         } catch (error) {
             res.status(500).json({
@@ -360,13 +358,13 @@ const bookControl = {
     },
     getByPages: async (req, res) => {
         try {
-            const book = await books.find(req.params.pages);
+            const books = await Book.find(req.params.pages);
             res.json({
                 query:'OK',
                 success: true,
                 status: 200,
                 message: "client found successfully",
-                data: book
+                data: books
             });
         } catch (error) {
             res.status(500).json({
@@ -380,7 +378,6 @@ const bookControl = {
 
 }
 
-module.exports = {
-    clientControl,
-    bookControl
-}
+
+
+  
