@@ -1,7 +1,9 @@
 
+// llamando la biblioteca mongoose oasignandosela a una  constante
 const mongoose = require("mongoose");
 
 
+// funcion para realizar la conexion ala base de datos
 
 const connectDB = async ()=>{
     try {
@@ -22,5 +24,6 @@ const connectDB = async ()=>{
 
 };
 
+// exportando la funcion de  connectDB
 module.exports = connectDB;
 

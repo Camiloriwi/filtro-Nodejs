@@ -6,7 +6,9 @@ const jwt_secret = "##%adafasdsadasd##";
 
 
 
+// creacion del un objeto controlador  del modelo clientes   donde estaran todas nuestras funciones  para realizar las consultas
 
+// enste onjecto usamos  module.exports.clientControl={}  para ir importando todo ala ves
 
 module.exports.clientControl= {
 
@@ -19,7 +21,7 @@ module.exports.clientControl= {
                 query:'OK',
                 success: true,
                 status: 200,
-                message: "Student created successfully",
+                message: "client created successfully",
                 data: clients
             });
         } catch (error) {
@@ -27,7 +29,7 @@ module.exports.clientControl= {
                 query:'failed',
                 success: false,
                 status: 500,
-                message: " failed to create student",
+                message: " failed to create client",
                 message: error.message
             });
         }
@@ -112,7 +114,7 @@ module.exports.clientControl= {
                 query:'OK',
                 success: true,
                 status: 200,
-                message: "client found successfully",
+                message: "client  name found successfully",
                 data: clients
             });
         } catch (error) {
@@ -131,7 +133,7 @@ module.exports.clientControl= {
                 query:'OK',
                 success: true,
                 status: 200,
-                message: "client found successfully",
+                message: "client by age  found successfully",
                 data: edad
             });
         } catch (error) {
@@ -151,7 +153,7 @@ module.exports.clientControl= {
                 query:'OK',
                 success: true,
                 status: 200,
-                message: "client found successfully",
+                message: "client by gender found successfully",
                 data: data
             });
         } catch (error) {
@@ -210,6 +212,9 @@ module.exports.clientControl= {
 }
 
 
+// creacion del un objeto controlador  del modelo libros   donde estaran todas nuestras funciones  para realizar las consultas
+
+// enste onjecto usamos  module.exports.bookControl={}  para ir importando todo ala ves
 
 module.exports.bookControl = {
     
@@ -221,7 +226,7 @@ module.exports.bookControl = {
                 query:'OK',
                 success: true,
                 status: 200,
-                message: "Student created successfully",
+                message: "book  created successfully",
                 data: books
             });
        } catch (error) {
@@ -229,7 +234,7 @@ module.exports.bookControl = {
                 query:'failed',
                 success: false,
                 status: 500,
-                message: " failed to create student",
+                message: " failed to create book",
                 message: error.message
            });
        }
@@ -242,7 +247,7 @@ module.exports.bookControl = {
                  query:'OK',
                  success: true,
                  status: 200,
-                 message: "Student created successfully",
+                 message: "getAllBook  successfully",
                  data: books
              });
 
@@ -265,7 +270,7 @@ module.exports.bookControl = {
                 query:'OK',
                 success: true,
                 status: 200,
-                message: "client found successfully",
+                message: "getByIdBook found successfully",
                 data: books
             });
         } catch (error) {
@@ -284,7 +289,7 @@ module.exports.bookControl = {
                 query:'OK',
                 success: true,
                 status: 200,
-                message: "client updated successfully",
+                message: "updateBook  successfully",
                 data: book
             });
         } catch (error) {
@@ -304,7 +309,7 @@ module.exports.bookControl = {
                 query:'OK',
                 success: true,
                 status: 200,
-                message: "client deleted successfully",
+                message: "deleteBook  successfully",
                 data: books
             });
         } catch (error) {         
@@ -323,7 +328,7 @@ module.exports.bookControl = {
                 query:'OK',
                 success: true,
                 status: 200,
-                message: "client found successfully",
+                message: "getByAuthor found successfully",
                 data: books
             });
         } catch (error) {
@@ -342,7 +347,7 @@ module.exports.bookControl = {
                 query:'OK',
                 success: true,
                 status: 200,
-                message: "client found successfully",
+                message: "getByNames found successfully",
                 data: books
             });
         } catch (error) {
@@ -361,7 +366,7 @@ module.exports.bookControl = {
                 query:'OK',
                 success: true,
                 status: 200,
-                message: "client found successfully",
+                message: "getByPages found successfully",
                 data: books
             });
         } catch (error) {
