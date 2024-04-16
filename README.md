@@ -50,8 +50,8 @@ project/
 
     ## bash
     cd project
-    npm install
-    ```
+    `npm install`
+   
 
 ## Configuration
 
@@ -62,8 +62,9 @@ Edit the `src/config/database.js` file to configure the connection to your Mongo
 1. Start the server:
 
     ## bash
-    npm start
-    ```
+    initialize
+   ` npm start`
+   
 
 The server will start at `http://localhost:3000`.
 
