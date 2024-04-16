@@ -63,7 +63,8 @@ Edit the `src/config/database.js` file to configure the connection to your Mongo
 
     ## bash
     initialize
-   ` npm start`
+
+   npm start
    
 
 The server will start at `http://localhost:3000`.
