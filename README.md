@@ -1,6 +1,6 @@
 
 ---
-# Book and Client Management Project with Node.js and MongoDB
+# Book and Client Management Project with Node.js MongoDB and Express
 
 This project is a simple application for managing books and clients using Node.js and MongoDB. It provides an API for creating, updating, retrieving, and deleting books and clients, as well as user authentication.
 
