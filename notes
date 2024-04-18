@@ -1,0 +1,9 @@
+crear el dump de una base de datos:
+mongodump --uri="mongodb+srv://camilo:C23JlXoLIvokyukw@filtro.xq3dxlh.mongodb.net/"
+
+crear el dump de una base de datos pero esta ves solo de una collection:
+mongodump --uri="mongodb+srv://camilo:C23JlXoLIvokyukw@filtro.xq3dxlh.mongodb.net/students"
+
+
+mongorestore --uri="mongodb+srv://camilo:C23JlXoLIvokyukw@filtro.xq3dxlh.mongodb.net/"
+

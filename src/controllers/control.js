@@ -181,7 +181,6 @@ module.exports.clientControl= {
                 query:'failed',
                 success: false,
                 status: 500,
-                message: "client not updated",
                 message: error.message
             });
         }
@@ -297,7 +296,6 @@ module.exports.bookControl = {
                 query:'failed',
                 success: false,
                 status: 500,
-                message: "client not updated",
                 message: error.message
             });
         }
